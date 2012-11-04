@@ -49,7 +49,7 @@ Documentation
 glue(selector, html string, element)
 The input is passed to jQuery, so it will accept anything that jquery does.
 
-It returns template object. You add setters to this object like this:
+It returns a template object. You add setters to this object like this:
 
 ```javascript
 template.set.waffles = function(value){
