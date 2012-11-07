@@ -13,7 +13,9 @@ Box.set.clicks = function(clicks){
 		$sentence.show();
 	}
 };
-Box.def.title = 'Untitled';
+Box.def.title = function(){
+	return 'Untitled - '+(new Date()).toDateString();
+};
 Box.def.content = 'Empty box';
 Box.def.titleColor = 'inherit';
 Box.def.important = false;

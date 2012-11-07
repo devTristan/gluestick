@@ -18,6 +18,9 @@ var glue = function(html){
 			}
 			
 			$child.data[field] = value;
+			if (typeof value == 'function') {
+				value = value();
+			}
 			$parent.set[field].call($child, value);
 		};
 		

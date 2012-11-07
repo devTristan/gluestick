@@ -73,6 +73,14 @@ You can also provide default values, like this:
 template.def.waffles = 3;
 ```
 
+Values can be given as functions, which will be executed when they are used.
+
+```javascript
+template.def.waffles = function(){
+	return Math.floor( Math.random()*25 );
+};
+```
+
 Template objects only have one method, and that is the "create" method. It returns a jQuery (or zepto) object, which you can then appendTo or insertAfter anything you like.
 
 ```javascript
