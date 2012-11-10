@@ -117,3 +117,18 @@ glue.set.hasClass = function(className, selector){
 		};
 	}
 };
+glue.set.addClass = function(selector){
+	if (selector) {
+		return function(newClass){
+			if (newClass) {
+				this.find(selector).addClass(newClass);
+			}
+		};
+	} else {
+		return function(newClass){
+			if (newClass) {
+				this.addClass(newClass);
+			}
+		};
+	}
+};
