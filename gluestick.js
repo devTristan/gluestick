@@ -13,7 +13,7 @@ var glue = function(html){
 				return;
 			}
 			
-			if (typeof $parent.set[field] != 'function') {
+			if (typeof $parent.set[field] == 'undefined') {
 				throw "Couldn't find setter for "+field;
 			}
 			
@@ -21,7 +21,12 @@ var glue = function(html){
 			if (typeof value == 'function') {
 				value = value();
 			}
-			$parent.set[field].call($child, value);
+			if (typeof $parent.set[field] == 'function') {
+				$parent.set[field] = [$parent.set[field]];
+			}
+			for (var i in $parent.set[field]) {
+				$parent.set[field][i].call($child, value);
+			}
 		};
 		
 		var vars = {};
