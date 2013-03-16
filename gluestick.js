@@ -70,6 +70,17 @@ glue.set.html = function(selector){
 		};
 	}
 };
+glue.set.val = function(selector){
+	if (selector) {
+		return function(text){
+			this.find(selector).val(text);
+		};
+	} else {
+		return function(text){
+			this.val(text);
+		};
+	}
+};
 glue.set.element = function(selector){
 	if (selector) {
 		return function(element){
